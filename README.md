@@ -5,7 +5,7 @@ inteligente **A.T.L.A.S.** e pela luva háptica **L.I.V.I.A.**
 
 > **PROPRIETARY AND CONFIDENTIAL**
 > Copyright (c) 2026 Luiz Gabriel Silva Brito Santos (K-Tech). Todos os direitos reservados.
-> CNPJ: 66.454.862/0001-00 — Processo INPI: BR 20 2026 012104 0
+> Processo INPI: BR 20 2026 012104 0
 > Código disponibilizado **estritamente para avaliação acadêmica (SENAI)**.
 > É proibida a cópia, modificação, distribuição ou uso comercial sem autorização
 > prévia e por escrito do fundador da K-Tech.
