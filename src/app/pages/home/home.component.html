@@ -30,7 +30,7 @@
        NAVBAR (fixa no topo)
        ============================================================ -->
   <nav class="fixed top-0 left-0 right-0 z-40 bg-ktech-dark/95 backdrop-blur-xl border-b border-ktech-teal/10">
-    <div class="max-w-7xl mx-auto px-6 py-4">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-4">
       <div class="flex items-center justify-between">
 
         <!-- Logo oficial da K-Tech -->
@@ -38,9 +38,9 @@
           <img
             src="assets/logotipo/logotipo-k-tech.jpg"
             alt="Logotipo K-Tech"
-            class="h-12 w-auto rounded-xl logo-blend"
+            class="h-10 md:h-12 w-auto rounded-xl logo-blend"
           />
-          <span class="text-xl font-semibold tracking-tight">K-Tech</span>
+          <span class="text-lg md:text-xl font-semibold tracking-tight">K-Tech</span>
         </a>
 
         <!-- Links de navegação (desktop) -->
@@ -63,7 +63,7 @@
         </button>
 
         <!-- Botão do menu hambúrguer (mobile) -->
-        <button type="button" aria-label="Abrir menu" class="lg:hidden text-ktech-cyan" (click)="toggleMobileMenu()">
+        <button type="button" aria-label="Abrir menu" class="lg:hidden text-ktech-cyan p-2" (click)="toggleMobileMenu()">
           <lucide-icon name="menu" class="w-6 h-6"></lucide-icon>
         </button>
       </div>
@@ -90,7 +90,7 @@
   <!-- ============================================================
        HERO (seção inicial)
        ============================================================ -->
-  <section id="inicio" class="pt-28 pb-20 min-h-screen flex items-center relative overflow-hidden">
+  <section id="inicio" class="pt-28 pb-16 md:pb-20 min-h-screen flex items-center relative overflow-hidden">
 
     <!-- Grade animada de fundo -->
     <div class="absolute inset-0 opacity-5">
@@ -100,72 +100,74 @@
       ></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 py-12 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center relative z-10">
 
       <!-- Coluna esquerda: texto e chamadas -->
-      <div class="space-y-8 reveal-left">
-        <div class="inline-block px-4 py-2 bg-ktech-teal/10 border border-ktech-teal/30 rounded-full text-ktech-cyan text-sm mb-4">
+      <div class="space-y-6 md:space-y-8 reveal-left">
+        <div class="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-ktech-teal/10 border border-ktech-teal/30 rounded-full text-ktech-cyan text-xs md:text-sm mb-2 md:mb-4">
           <span class="flex items-center gap-2">
-            <lucide-icon name="wifi" class="w-4 h-4"></lucide-icon>
+            <lucide-icon name="wifi" class="w-3 h-3 md:w-4 md:h-4"></lucide-icon>
             Arquitetura IoT Descentralizada
           </span>
         </div>
 
-        <h1 class="text-6xl lg:text-7xl font-bold leading-tight">
+        <!-- Título responsivo com break-words -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight break-words">
           A Mobilidade Autônoma,
           <span class="block text-transparent bg-clip-text bg-gradient-to-r from-ktech-teal to-ktech-cyan">
             Reimaginada.
           </span>
         </h1>
 
-        <p class="text-white/60 text-lg leading-relaxed max-w-xl">
+        <!-- Parágrafo responsivo -->
+        <p class="text-white/60 text-base md:text-lg leading-relaxed max-w-xl">
           O ecossistema definitivo para deficientes visuais. Detecção a laser e resposta tátil com zero latência.
           A bengala A.T.L.A.S. e a luva L.I.V.I.A. trabalham em perfeita harmonia para transformar a navegação.
         </p>
 
-        <!-- Botões de ação -->
-        <div class="flex flex-wrap gap-4">
+        <!-- Botões de ação responsivos -->
+        <div class="flex flex-wrap gap-3 md:gap-4">
           <button
             type="button"
-            class="px-8 py-4 bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark rounded-full hover:shadow-2xl hover:shadow-ktech-cyan/40 transition-all duration-300 font-semibold group"
+            class="px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark rounded-full hover:shadow-2xl hover:shadow-ktech-cyan/40 transition-all duration-300 font-semibold group text-sm md:text-base"
           >
             <span class="flex items-center gap-2">
               Garantir na Pré-Venda
-              <lucide-icon name="chevron-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></lucide-icon>
+              <lucide-icon name="chevron-right" class="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform"></lucide-icon>
             </span>
           </button>
           <button
             type="button"
-            class="px-8 py-4 border-2 border-ktech-teal text-white rounded-full hover:bg-ktech-teal/10 hover:border-ktech-cyan transition-all duration-300 font-semibold"
+            class="px-6 py-3 md:px-8 md:py-4 border-2 border-ktech-teal text-white rounded-full hover:bg-ktech-teal/10 hover:border-ktech-cyan transition-all duration-300 font-semibold text-sm md:text-base"
           >
             Assistir ao Vídeo
           </button>
         </div>
 
         <!-- Estatísticas rápidas -->
-        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+        <div class="grid grid-cols-3 gap-4 md:gap-6 pt-6 md:pt-8 border-t border-white/10">
           <div>
-            <div class="text-3xl font-bold text-ktech-cyan">&lt;1ms</div>
-            <div class="text-white/50 text-sm">Latência</div>
+            <div class="text-2xl md:text-3xl font-bold text-ktech-cyan">&lt;1ms</div>
+            <div class="text-white/50 text-xs md:text-sm">Latência</div>
           </div>
           <div>
-            <div class="text-3xl font-bold text-ktech-cyan">5m</div>
-            <div class="text-white/50 text-sm">Alcance</div>
+            <div class="text-2xl md:text-3xl font-bold text-ktech-cyan">5m</div>
+            <div class="text-white/50 text-xs md:text-sm">Alcance</div>
           </div>
           <div>
-            <div class="text-3xl font-bold text-ktech-cyan">16h</div>
-            <div class="text-white/50 text-sm">Bateria</div>
+            <div class="text-2xl md:text-3xl font-bold text-ktech-cyan">16h</div>
+            <div class="text-white/50 text-xs md:text-sm">Bateria</div>
           </div>
         </div>
       </div>
 
       <!-- Coluna direita: carrossel dos produtos -->
-      <div class="relative reveal-right">
+      <div class="relative reveal-right mt-8 lg:mt-0">
         <app-carousel
           [slides]="heroSlides"
           [autoPlayMs]="5000"
           imageFit="contain"
-          heightClass="h-[420px] md:h-[540px] lg:h-[620px]"
+          heightClass="h-[320px] sm:h-[420px] md:h-[540px] lg:h-[620px]"
         ></app-carousel>
       </div>
     </div>
@@ -174,43 +176,43 @@
   <!-- ============================================================
        O ECOSSISTEMA (A.T.L.A.S. + L.I.V.I.A.)
        ============================================================ -->
-  <section id="ecossistema" class="py-24 bg-gradient-to-b from-ktech-dark via-ktech-surface to-ktech-dark relative">
-    <div class="max-w-7xl mx-auto px-6">
+  <section id="ecossistema" class="py-16 md:py-24 bg-gradient-to-b from-ktech-dark via-ktech-surface to-ktech-dark relative">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
 
       <!-- Título da seção -->
-      <div class="text-center mb-16" appRevealOnScroll>
-        <h2 class="text-5xl font-bold mb-4">O Ecossistema</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-ktech-teal to-ktech-cyan mx-auto mb-4"></div>
-        <p class="text-white/60 text-lg max-w-2xl mx-auto">
+      <div class="text-center mb-12 md:mb-16" appRevealOnScroll>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">O Ecossistema</h2>
+        <div class="w-16 md:w-24 h-1 bg-gradient-to-r from-ktech-teal to-ktech-cyan mx-auto mb-4"></div>
+        <p class="text-white/60 text-base md:text-lg max-w-2xl mx-auto">
           Dois dispositivos revolucionários trabalhando como um sistema inteligente
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-12">
+      <div class="grid lg:grid-cols-2 gap-8 md:gap-12">
 
         <!-- Cartão A.T.L.A.S. (bengala) -->
         <div
           appRevealOnScroll
-          class="bg-ktech-surface border border-ktech-teal/20 rounded-3xl p-8 hover:border-ktech-teal/50 transition-all duration-300 group"
+          class="bg-ktech-surface border border-ktech-teal/20 rounded-3xl p-6 md:p-8 hover:border-ktech-teal/50 transition-all duration-300 group"
         >
           <div class="flex items-start gap-4 mb-6">
-            <div class="w-16 h-16 bg-gradient-to-br from-ktech-teal to-ktech-cyan rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-              <lucide-icon name="target" class="w-8 h-8 text-ktech-dark"></lucide-icon>
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-ktech-teal to-ktech-cyan rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+              <lucide-icon name="target" class="w-7 h-7 md:w-8 md:h-8 text-ktech-dark"></lucide-icon>
             </div>
             <div>
-              <h3 class="text-2xl font-bold text-ktech-cyan mb-1">A.T.L.A.S.</h3>
-              <p class="text-white/50 text-sm">Assistente Tátil de Locomoção e Acessibilidade Segura</p>
+              <h3 class="text-xl md:text-2xl font-bold text-ktech-cyan mb-1">A.T.L.A.S.</h3>
+              <p class="text-white/50 text-xs md:text-sm">Assistente Tátil de Locomoção e Acessibilidade Segura</p>
             </div>
           </div>
 
           <div class="space-y-6">
-            <div *ngFor="let feature of atlasFeatures" class="flex gap-4">
-              <div class="w-12 h-12 bg-ktech-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <lucide-icon [name]="feature.icon" class="w-6 h-6 text-ktech-cyan"></lucide-icon>
+            <div *ngFor="let feature of atlasFeatures" class="flex gap-3 md:gap-4">
+              <div class="w-10 h-10 md:w-12 md:h-12 bg-ktech-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <lucide-icon [name]="feature.icon" class="w-5 h-5 md:w-6 md:h-6 text-ktech-cyan"></lucide-icon>
               </div>
               <div>
-                <h4 class="text-white font-semibold mb-1">{{ feature.title }}</h4>
-                <p class="text-white/60 text-sm leading-relaxed">{{ feature.description }}</p>
+                <h4 class="text-white font-semibold mb-1 text-sm md:text-base">{{ feature.title }}</h4>
+                <p class="text-white/60 text-xs md:text-sm leading-relaxed">{{ feature.description }}</p>
               </div>
             </div>
           </div>
@@ -220,26 +222,26 @@
         <div
           appRevealOnScroll
           [revealDelay]="200"
-          class="bg-ktech-surface border border-ktech-teal/20 rounded-3xl p-8 hover:border-ktech-teal/50 transition-all duration-300 group"
+          class="bg-ktech-surface border border-ktech-teal/20 rounded-3xl p-6 md:p-8 hover:border-ktech-teal/50 transition-all duration-300 group"
         >
           <div class="flex items-start gap-4 mb-6">
-            <div class="w-16 h-16 bg-gradient-to-br from-ktech-teal to-ktech-cyan rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-              <lucide-icon name="hand" class="w-8 h-8 text-ktech-dark"></lucide-icon>
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-ktech-teal to-ktech-cyan rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+              <lucide-icon name="hand" class="w-7 h-7 md:w-8 md:h-8 text-ktech-dark"></lucide-icon>
             </div>
             <div>
-              <h3 class="text-2xl font-bold text-ktech-cyan mb-1">L.I.V.I.A.</h3>
-              <p class="text-white/50 text-sm">Luva Inteligente Viável e Acessível</p>
+              <h3 class="text-xl md:text-2xl font-bold text-ktech-cyan mb-1">L.I.V.I.A.</h3>
+              <p class="text-white/50 text-xs md:text-sm">Luva Inteligente Viável e Acessível</p>
             </div>
           </div>
 
           <div class="space-y-6">
-            <div *ngFor="let feature of liviaFeatures" class="flex gap-4">
-              <div class="w-12 h-12 bg-ktech-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <lucide-icon [name]="feature.icon" class="w-6 h-6 text-ktech-cyan"></lucide-icon>
+            <div *ngFor="let feature of liviaFeatures" class="flex gap-3 md:gap-4">
+              <div class="w-10 h-10 md:w-12 md:h-12 bg-ktech-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <lucide-icon [name]="feature.icon" class="w-5 h-5 md:w-6 md:h-6 text-ktech-cyan"></lucide-icon>
               </div>
               <div>
-                <h4 class="text-white font-semibold mb-1">{{ feature.title }}</h4>
-                <p class="text-white/60 text-sm leading-relaxed">{{ feature.description }}</p>
+                <h4 class="text-white font-semibold mb-1 text-sm md:text-base">{{ feature.title }}</h4>
+                <p class="text-white/60 text-xs md:text-sm leading-relaxed">{{ feature.description }}</p>
               </div>
             </div>
           </div>
@@ -251,28 +253,26 @@
   <!-- ============================================================
        COMPARAR MODELOS (carrossel de materiais + abas de preços)
        ============================================================ -->
-  <section id="comparar" class="py-24 bg-ktech-dark relative">
-    <div class="max-w-7xl mx-auto px-6">
+  <section id="comparar" class="py-16 md:py-24 bg-ktech-dark relative">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
 
       <!-- Título da seção -->
-      <div class="text-center mb-16" appRevealOnScroll>
-        <h2 class="text-5xl font-bold mb-4">Comparar Modelos</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-ktech-teal to-ktech-cyan mx-auto mb-4"></div>
-        <p class="text-white/60 text-lg">Escolha a configuração perfeita para suas necessidades</p>
+      <div class="text-center mb-12 md:mb-16" appRevealOnScroll>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Comparar Modelos</h2>
+        <div class="w-16 md:w-24 h-1 bg-gradient-to-r from-ktech-teal to-ktech-cyan mx-auto mb-4"></div>
+        <p class="text-white/60 text-base md:text-lg">Escolha a configuração perfeita para suas necessidades</p>
       </div>
 
-      <!-- Carrossel visual dos materiais (LITE / PRO / DELUXE) -->
-      <div class="mb-16" appRevealOnScroll>
-        <div class="relative h-[460px] md:h-[640px] rounded-3xl overflow-hidden border border-ktech-teal/30 shadow-2xl shadow-ktech-teal/20 bg-ktech-dark">
+      <!-- Carrossel visual dos materiais -->
+      <div class="mb-12 md:mb-16" appRevealOnScroll>
+        <div class="relative h-[380px] sm:h-[460px] md:h-[640px] rounded-3xl overflow-hidden border border-ktech-teal/30 shadow-2xl shadow-ktech-teal/20 bg-ktech-dark">
 
           <ng-container *ngFor="let slide of comparisonSlides; let i = index">
             <div *ngIf="i === activeComparisonSlide" class="absolute inset-0 slide-enter">
-              <!-- object-contain: as renders dos tiers são verticais, então a imagem
-                   é exibida inteira, sem cortar a bengala. -->
               <img [src]="slide.src" [alt]="slide.alt" class="w-full h-full object-contain" />
-              <div class="absolute inset-0 bg-gradient-to-t from-ktech-dark via-ktech-dark/60 to-transparent flex flex-col items-center justify-end pb-10">
-                <h3 class="text-3xl font-bold text-ktech-cyan mb-2">{{ slide.title }}</h3>
-                <p class="text-white/80 text-center px-4">{{ slide.subtitle }}</p>
+              <div class="absolute inset-0 bg-gradient-to-t from-ktech-dark via-ktech-dark/60 to-transparent flex flex-col items-center justify-end pb-8 md:pb-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-ktech-cyan mb-2">{{ slide.title }}</h3>
+                <p class="text-white/80 text-sm md:text-base text-center px-4">{{ slide.subtitle }}</p>
               </div>
             </div>
           </ng-container>
@@ -282,40 +282,40 @@
             type="button"
             aria-label="Slide anterior"
             (click)="prevComparisonSlide()"
-            class="absolute top-1/2 -translate-y-1/2 left-6 z-10 bg-ktech-teal/20 backdrop-blur-md hover:bg-ktech-teal/40 text-white rounded-full p-3 transition-all duration-300 border border-ktech-teal/50"
+            class="absolute top-1/2 -translate-y-1/2 left-4 md:left-6 z-10 bg-ktech-teal/20 backdrop-blur-md hover:bg-ktech-teal/40 text-white rounded-full p-2 md:p-3 transition-all duration-300 border border-ktech-teal/50"
           >
-            <lucide-icon name="chevron-left" class="w-5 h-5"></lucide-icon>
+            <lucide-icon name="chevron-left" class="w-4 h-4 md:w-5 md:h-5"></lucide-icon>
           </button>
           <button
             type="button"
             aria-label="Próximo slide"
             (click)="nextComparisonSlide()"
-            class="absolute top-1/2 -translate-y-1/2 right-6 z-10 bg-ktech-teal/20 backdrop-blur-md hover:bg-ktech-teal/40 text-white rounded-full p-3 transition-all duration-300 border border-ktech-teal/50"
+            class="absolute top-1/2 -translate-y-1/2 right-4 md:right-6 z-10 bg-ktech-teal/20 backdrop-blur-md hover:bg-ktech-teal/40 text-white rounded-full p-2 md:p-3 transition-all duration-300 border border-ktech-teal/50"
           >
-            <lucide-icon name="chevron-right" class="w-5 h-5"></lucide-icon>
+            <lucide-icon name="chevron-right" class="w-4 h-4 md:w-5 md:h-5"></lucide-icon>
           </button>
 
           <!-- Indicadores -->
-          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          <div class="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
             <button
               *ngFor="let slide of comparisonSlides; let i = index"
               type="button"
               [attr.aria-label]="'Ir para o slide ' + (i + 1)"
               (click)="activeComparisonSlide = i"
               class="h-2 rounded-full transition-all duration-300"
-              [ngClass]="i === activeComparisonSlide ? 'w-10 bg-ktech-cyan' : 'w-2 bg-white/30'"
+              [ngClass]="i === activeComparisonSlide ? 'w-8 md:w-10 bg-ktech-cyan' : 'w-2 bg-white/30'"
             ></button>
           </div>
         </div>
       </div>
 
-      <!-- Abas de preços: Bengala / Luva / Kit -->
-      <div class="mb-12">
-        <div class="flex flex-wrap justify-center gap-4">
+      <!-- Abas de preços responsivas -->
+      <div class="mb-10 md:mb-12">
+        <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-3 md:gap-4">
           <button
             type="button"
             (click)="selectTab('bengala')"
-            class="px-8 py-3 rounded-full font-semibold transition-all duration-300"
+            class="px-4 py-2 sm:px-6 md:px-8 md:py-3 text-sm md:text-base rounded-full font-semibold transition-all duration-300"
             [ngClass]="
               activeTab === 'bengala'
                 ? 'bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark shadow-lg shadow-ktech-cyan/50'
@@ -327,7 +327,7 @@
           <button
             type="button"
             (click)="selectTab('luva')"
-            class="px-8 py-3 rounded-full font-semibold transition-all duration-300"
+            class="px-4 py-2 sm:px-6 md:px-8 md:py-3 text-sm md:text-base rounded-full font-semibold transition-all duration-300"
             [ngClass]="
               activeTab === 'luva'
                 ? 'bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark shadow-lg shadow-ktech-cyan/50'
@@ -339,7 +339,7 @@
           <button
             type="button"
             (click)="selectTab('kit')"
-            class="px-8 py-3 rounded-full font-semibold transition-all duration-300"
+            class="px-4 py-2 sm:px-6 md:px-8 md:py-3 text-sm md:text-base rounded-full font-semibold transition-all duration-300"
             [ngClass]="
               activeTab === 'kit'
                 ? 'bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark shadow-lg shadow-ktech-cyan/50'
@@ -351,11 +351,8 @@
         </div>
       </div>
 
-      <!-- Conteúdo da aba ativa: os 3 cartões de plano.
-           A chave [ngClass]/key é o próprio activeTab, então a animação
-           .tab-enter reinicia a cada troca de aba. -->
       <ng-container *ngFor="let tab of ['bengala', 'luva', 'kit']">
-        <div *ngIf="activeTab === tab" class="grid lg:grid-cols-3 gap-8 tab-enter">
+        <div *ngIf="activeTab === tab" class="grid lg:grid-cols-3 gap-6 md:gap-8 tab-enter">
           <app-pricing-card *ngFor="let plan of activePlans" [plan]="plan"></app-pricing-card>
         </div>
       </ng-container>
@@ -365,37 +362,37 @@
   <!-- ============================================================
        NOSSA HISTÓRIA
        ============================================================ -->
-  <section id="historia" class="py-24 bg-gradient-to-b from-ktech-dark to-ktech-surface relative">
-    <div class="max-w-6xl mx-auto px-6">
+  <section id="historia" class="py-16 md:py-24 bg-gradient-to-b from-ktech-dark to-ktech-surface relative">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
 
-      <div class="text-center mb-16" appRevealOnScroll>
-        <h2 class="text-5xl font-bold mb-4">Nossa História</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-ktech-teal to-ktech-cyan mx-auto"></div>
+      <div class="text-center mb-12 md:mb-16" appRevealOnScroll>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Nossa História</h2>
+        <div class="w-16 md:w-24 h-1 bg-gradient-to-r from-ktech-teal to-ktech-cyan mx-auto"></div>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
 
-        <!-- Carrossel com as fotos da equipe K-Tech -->
-        <div appRevealOnScroll>
+        <!-- Carrossel -->
+        <div appRevealOnScroll class="order-2 lg:order-1 mt-8 lg:mt-0">
           <app-carousel
             [slides]="teamSlides"
             [autoPlayMs]="4000"
             imageFit="contain"
-            heightClass="h-[420px] md:h-[520px]"
+            heightClass="h-[300px] sm:h-[420px] md:h-[520px]"
           ></app-carousel>
         </div>
 
         <!-- Blocos de texto -->
-        <div class="space-y-6" appRevealOnScroll [revealDelay]="150">
+        <div class="space-y-6 md:space-y-8 order-1 lg:order-2" appRevealOnScroll [revealDelay]="150">
 
-          <div class="space-y-4">
+          <div class="space-y-3 md:space-y-4">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 bg-ktech-teal/10 rounded-xl flex items-center justify-center">
-                <lucide-icon name="zap" class="w-6 h-6 text-ktech-cyan"></lucide-icon>
+              <div class="w-10 h-10 md:w-12 md:h-12 bg-ktech-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <lucide-icon name="zap" class="w-5 h-5 md:w-6 md:h-6 text-ktech-cyan"></lucide-icon>
               </div>
-              <h3 class="text-xl font-semibold">Da Simulação à Realidade</h3>
+              <h3 class="text-lg md:text-xl font-semibold">Da Simulação à Realidade</h3>
             </div>
-            <p class="text-white/70 leading-relaxed">
+            <p class="text-white/70 leading-relaxed text-sm md:text-base">
               Tudo começou no ano de 2025 em Salvador, quando ainda era apenas um projeto de bancada.
               A K-Tech deu seus primeiros passos com simulações de circuitos no Tinkercad em um
               laboratório universitário. O que iniciou como uma prova de conceito evoluiu para um
@@ -403,14 +400,14 @@
             </p>
           </div>
 
-          <div class="space-y-4">
+          <div class="space-y-3 md:space-y-4">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 bg-ktech-teal/10 rounded-xl flex items-center justify-center">
-                <lucide-icon name="target" class="w-6 h-6 text-ktech-cyan"></lucide-icon>
+              <div class="w-10 h-10 md:w-12 md:h-12 bg-ktech-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <lucide-icon name="target" class="w-5 h-5 md:w-6 md:h-6 text-ktech-cyan"></lucide-icon>
               </div>
-              <h3 class="text-xl font-semibold">Inovação Guiada por Missão</h3>
+              <h3 class="text-lg md:text-xl font-semibold">Inovação Guiada por Missão</h3>
             </div>
-            <p class="text-white/70 leading-relaxed">
+            <p class="text-white/70 leading-relaxed text-sm md:text-base">
               Nossa equipe, formada por especialistas em mecatrônica e com uma base técnica muito forte
               em engenharia de automação, atua lado a lado com defensores da acessibilidade. Aplicamos
               nosso conhecimento de forma prática para criar uma tecnologia assertiva e inovadora,
@@ -420,14 +417,14 @@
             </p>
           </div>
 
-          <div class="space-y-4">
+          <div class="space-y-3 md:space-y-4">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 bg-ktech-teal/10 rounded-xl flex items-center justify-center">
-                <lucide-icon name="globe" class="w-6 h-6 text-ktech-cyan"></lucide-icon>
+              <div class="w-10 h-10 md:w-12 md:h-12 bg-ktech-teal/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <lucide-icon name="globe" class="w-5 h-5 md:w-6 md:h-6 text-ktech-cyan"></lucide-icon>
               </div>
-              <h3 class="text-xl font-semibold">Democratizando a Acessibilidade</h3>
+              <h3 class="text-lg md:text-xl font-semibold">Democratizando a Acessibilidade</h3>
             </div>
-            <p class="text-white/70 leading-relaxed">
+            <p class="text-white/70 leading-relaxed text-sm md:text-base">
               Acreditamos que tecnologia de ponta deve ser acessível a todos.
               Cada dispositivo K-Tech é co-projetado com nossa comunidade de usuários, garantindo
               que a inovação sirva aqueles que mais precisam.
@@ -435,14 +432,14 @@
           </div>
 
           <!-- Números de P&D -->
-          <div class="grid grid-cols-2 gap-4 pt-6 border-t border-white/10">
+          <div class="grid grid-cols-2 gap-4 pt-4 md:pt-6 border-t border-white/10">
             <div>
-              <div class="text-3xl font-bold text-ktech-cyan">4+</div>
-              <div class="text-white/50 text-sm">Anos de Formação Técnica</div>
+              <div class="text-2xl md:text-3xl font-bold text-ktech-cyan">4+</div>
+              <div class="text-white/50 text-xs md:text-sm">Anos de Formação Técnica</div>
             </div>
             <div>
-              <div class="text-3xl font-bold text-ktech-cyan whitespace-nowrap">100%</div>
-              <div class="text-white/50 text-sm">Integração IoT Assistiva</div>
+              <div class="text-2xl md:text-3xl font-bold text-ktech-cyan whitespace-nowrap">100%</div>
+              <div class="text-white/50 text-xs md:text-sm">Integração IoT Assistiva</div>
             </div>
           </div>
         </div>
@@ -453,40 +450,38 @@
   <!-- ============================================================
        FAQ - DÚVIDAS FREQUENTES (acordeão)
        ============================================================ -->
-  <section id="duvidas" class="py-24 bg-ktech-dark">
-    <div class="max-w-4xl mx-auto px-6">
+  <section id="duvidas" class="py-16 md:py-24 bg-ktech-dark">
+    <div class="max-w-4xl mx-auto px-4 md:px-6">
 
-      <div class="text-center mb-16" appRevealOnScroll>
-        <h2 class="text-5xl font-bold mb-4">Dúvidas Frequentes</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-ktech-teal to-ktech-cyan mx-auto"></div>
+      <div class="text-center mb-12 md:mb-16" appRevealOnScroll>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Dúvidas Frequentes</h2>
+        <div class="w-16 md:w-24 h-1 bg-gradient-to-r from-ktech-teal to-ktech-cyan mx-auto"></div>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-3 md:space-y-4">
         <div
           *ngFor="let faq of faqs; let i = index"
           appRevealOnScroll
           [revealDelay]="i * 100"
           class="border border-ktech-teal/20 rounded-2xl overflow-hidden hover:border-ktech-teal/50 transition-all duration-300 bg-ktech-surface"
         >
-          <!-- Pergunta (clicável) -->
           <button
             type="button"
             (click)="toggleFaq(i)"
-            class="w-full p-6 flex items-center justify-between text-left hover:bg-ktech-teal/5 transition-colors"
+            class="w-full p-4 md:p-6 flex items-center justify-between text-left hover:bg-ktech-teal/5 transition-colors"
             [attr.aria-expanded]="openFaq === i"
           >
-            <span class="text-lg font-semibold pr-4">{{ faq.question }}</span>
+            <span class="text-base md:text-lg font-semibold pr-4">{{ faq.question }}</span>
             <lucide-icon
               name="chevron-down"
-              class="w-5 h-5 text-ktech-cyan flex-shrink-0 transition-transform duration-300"
+              class="w-4 h-4 md:w-5 md:h-5 text-ktech-cyan flex-shrink-0 transition-transform duration-300"
               [ngClass]="openFaq === i ? 'rotate-180' : ''"
             ></lucide-icon>
           </button>
 
-          <!-- Resposta (expande/recolhe com animação CSS) -->
           <div class="faq-answer" [class.open]="openFaq === i">
             <div>
-              <div class="px-6 pb-6 text-white/70 leading-relaxed border-t border-ktech-teal/10 pt-4">
+              <div class="px-4 md:px-6 pb-4 md:pb-6 text-white/70 leading-relaxed border-t border-ktech-teal/10 pt-3 md:pt-4 text-sm md:text-base">
                 {{ faq.answer }}
               </div>
             </div>
@@ -499,38 +494,38 @@
   <!-- ============================================================
        SEGURANÇA E CONFIANÇA
        ============================================================ -->
-  <section class="py-16 bg-gradient-to-b from-ktech-dark to-ktech-surface">
-    <div class="max-w-6xl mx-auto px-6">
-      <div appRevealOnScroll class="bg-ktech-surface border border-ktech-teal/20 rounded-3xl p-12">
+  <section class="py-12 md:py-16 bg-gradient-to-b from-ktech-dark to-ktech-surface">
+    <div class="max-w-6xl mx-auto px-4 md:px-6">
+      <div appRevealOnScroll class="bg-ktech-surface border border-ktech-teal/20 rounded-3xl p-8 md:p-12">
 
-        <div class="text-center mb-10">
-          <h3 class="text-3xl font-bold mb-2">Segurança e Confiança</h3>
-          <p class="text-white/60">Seus dados protegidos com tecnologia de ponta</p>
+        <div class="text-center mb-8 md:mb-10">
+          <h3 class="text-2xl md:text-3xl font-bold mb-2">Segurança e Confiança</h3>
+          <p class="text-white/60 text-sm md:text-base">Seus dados protegidos com tecnologia de ponta</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="text-center space-y-3">
-            <div class="w-16 h-16 bg-ktech-teal/10 rounded-2xl flex items-center justify-center mx-auto">
-              <lucide-icon name="shield" class="w-8 h-8 text-ktech-cyan"></lucide-icon>
+          <div class="text-center space-y-2 md:space-y-3">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-ktech-teal/10 rounded-2xl flex items-center justify-center mx-auto">
+              <lucide-icon name="shield" class="w-7 h-7 md:w-8 md:h-8 text-ktech-cyan"></lucide-icon>
             </div>
-            <h4 class="text-white font-semibold">Proteção Cloudflare Anti-DDoS</h4>
-            <p class="text-white/50 text-sm">Infraestrutura protegida contra ataques cibernéticos</p>
+            <h4 class="text-white font-semibold text-sm md:text-base">Proteção Cloudflare Anti-DDoS</h4>
+            <p class="text-white/50 text-xs md:text-sm">Infraestrutura protegida contra ataques cibernéticos</p>
           </div>
 
-          <div class="text-center space-y-3">
-            <div class="w-16 h-16 bg-ktech-teal/10 rounded-2xl flex items-center justify-center mx-auto">
-              <lucide-icon name="lock" class="w-8 h-8 text-ktech-cyan"></lucide-icon>
+          <div class="text-center space-y-2 md:space-y-3">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-ktech-teal/10 rounded-2xl flex items-center justify-center mx-auto">
+              <lucide-icon name="lock" class="w-7 h-7 md:w-8 md:h-8 text-ktech-cyan"></lucide-icon>
             </div>
-            <h4 class="text-white font-semibold">Criptografia de Ponta a Ponta</h4>
-            <p class="text-white/50 text-sm">Dados protegidos com padrão AES-256</p>
+            <h4 class="text-white font-semibold text-sm md:text-base">Criptografia de Ponta a Ponta</h4>
+            <p class="text-white/50 text-xs md:text-sm">Dados protegidos com padrão AES-256</p>
           </div>
 
-          <div class="text-center space-y-3">
-            <div class="w-16 h-16 bg-ktech-teal/10 rounded-2xl flex items-center justify-center mx-auto">
-              <lucide-icon name="file-check" class="w-8 h-8 text-ktech-cyan"></lucide-icon>
+          <div class="text-center space-y-2 md:space-y-3">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-ktech-teal/10 rounded-2xl flex items-center justify-center mx-auto">
+              <lucide-icon name="file-check" class="w-7 h-7 md:w-8 md:h-8 text-ktech-cyan"></lucide-icon>
             </div>
-            <h4 class="text-white font-semibold">100% Adequado à LGPD</h4>
-            <p class="text-white/50 text-sm">Conformidade total com a legislação brasileira</p>
+            <h4 class="text-white font-semibold text-sm md:text-base">100% Adequado à LGPD</h4>
+            <p class="text-white/50 text-xs md:text-sm">Conformidade total com a legislação brasileira</p>
           </div>
         </div>
       </div>
@@ -540,15 +535,15 @@
   <!-- ============================================================
        CONTATO B2B (formulário)
        ============================================================ -->
-  <section id="contato" class="py-24 bg-ktech-surface">
-    <div class="max-w-5xl mx-auto px-6">
+  <section id="contato" class="py-16 md:py-24 bg-ktech-surface">
+    <div class="max-w-5xl mx-auto px-4 md:px-6">
 
-      <!-- Seletor: Pessoa Física x Pessoa Jurídica -->
-      <div class="flex justify-center gap-4 mb-10" appRevealOnScroll>
+      <!-- Seletor -->
+      <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 mb-8 md:mb-10" appRevealOnScroll>
         <button
           type="button"
           (click)="selectContactType('fisica')"
-          class="px-8 py-3 rounded-xl font-semibold transition-all duration-300"
+          class="px-6 py-3 md:px-8 md:py-3 text-sm md:text-base rounded-xl font-semibold transition-all duration-300"
           [ngClass]="
             contactType === 'fisica'
               ? 'bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark shadow-lg shadow-ktech-cyan/50'
@@ -560,7 +555,7 @@
         <button
           type="button"
           (click)="selectContactType('juridica')"
-          class="px-8 py-3 rounded-xl font-semibold transition-all duration-300"
+          class="px-6 py-3 md:px-8 md:py-3 text-sm md:text-base rounded-xl font-semibold transition-all duration-300"
           [ngClass]="
             contactType === 'juridica'
               ? 'bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark shadow-lg shadow-ktech-cyan/50'
@@ -571,19 +566,18 @@
         </button>
       </div>
 
-      <div class="text-center mb-16">
-        <h2 class="text-5xl font-bold mb-4">{{ contactContent.title }}</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-ktech-teal to-ktech-cyan mx-auto mb-4"></div>
-        <p class="text-white/60 text-lg">{{ contactContent.subtitle }}</p>
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{{ contactContent.title }}</h2>
+        <div class="w-16 md:w-24 h-1 bg-gradient-to-r from-ktech-teal to-ktech-cyan mx-auto mb-4"></div>
+        <p class="text-white/60 text-base md:text-lg">{{ contactContent.subtitle }}</p>
       </div>
 
-      <div appRevealOnScroll class="bg-ktech-dark border border-ktech-teal/20 rounded-3xl p-8 lg:p-12">
-        <form (ngSubmit)="onContactSubmit()" class="space-y-6">
+      <div appRevealOnScroll class="bg-ktech-dark border border-ktech-teal/20 rounded-3xl p-6 md:p-8 lg:p-12">
+        <form (ngSubmit)="onContactSubmit()" class="space-y-5 md:space-y-6">
 
-          <div class="grid md:grid-cols-2 gap-6">
-            <!-- Nome -->
+          <div class="grid md:grid-cols-2 gap-5 md:gap-6">
             <div>
-              <label for="contact-name" class="block mb-2 text-white/70">Nome Completo *</label>
+              <label for="contact-name" class="block mb-2 text-white/70 text-sm md:text-base">Nome Completo *</label>
               <input
                 type="text"
                 id="contact-name"
@@ -591,13 +585,12 @@
                 [(ngModel)]="formData.name"
                 required
                 placeholder="João Silva"
-                class="w-full px-4 py-3 bg-ktech-surface border border-ktech-teal/30 rounded-xl focus:border-ktech-cyan focus:outline-none transition-colors text-white placeholder-white/30"
+                class="w-full px-4 py-3 bg-ktech-surface border border-ktech-teal/30 rounded-xl focus:border-ktech-cyan focus:outline-none transition-colors text-white placeholder-white/30 text-sm md:text-base"
               />
             </div>
 
-            <!-- Telefone -->
             <div>
-              <label for="contact-phone" class="block mb-2 text-white/70">Telefone *</label>
+              <label for="contact-phone" class="block mb-2 text-white/70 text-sm md:text-base">Telefone *</label>
               <input
                 type="tel"
                 id="contact-phone"
@@ -605,14 +598,13 @@
                 [(ngModel)]="formData.phone"
                 required
                 placeholder="+55 (11) 98765-4321"
-                class="w-full px-4 py-3 bg-ktech-surface border border-ktech-teal/30 rounded-xl focus:border-ktech-cyan focus:outline-none transition-colors text-white placeholder-white/30"
+                class="w-full px-4 py-3 bg-ktech-surface border border-ktech-teal/30 rounded-xl focus:border-ktech-cyan focus:outline-none transition-colors text-white placeholder-white/30 text-sm md:text-base"
               />
             </div>
           </div>
 
-          <!-- E-mail -->
           <div>
-            <label for="contact-email" class="block mb-2 text-white/70">{{ contactContent.emailLabel }}</label>
+            <label for="contact-email" class="block mb-2 text-white/70 text-sm md:text-base">{{ contactContent.emailLabel }}</label>
             <input
               type="email"
               id="contact-email"
@@ -620,13 +612,12 @@
               [(ngModel)]="formData.email"
               required
               [placeholder]="contactContent.emailPlaceholder"
-              class="w-full px-4 py-3 bg-ktech-surface border border-ktech-teal/30 rounded-xl focus:border-ktech-cyan focus:outline-none transition-colors text-white placeholder-white/30"
+              class="w-full px-4 py-3 bg-ktech-surface border border-ktech-teal/30 rounded-xl focus:border-ktech-cyan focus:outline-none transition-colors text-white placeholder-white/30 text-sm md:text-base"
             />
           </div>
 
-          <!-- Mensagem -->
           <div>
-            <label for="contact-message" class="block mb-2 text-white/70">Mensagem *</label>
+            <label for="contact-message" class="block mb-2 text-white/70 text-sm md:text-base">Mensagem *</label>
             <textarea
               id="contact-message"
               name="message"
@@ -634,13 +625,13 @@
               required
               rows="5"
               [placeholder]="contactContent.messagePlaceholder"
-              class="w-full px-4 py-3 bg-ktech-surface border border-ktech-teal/30 rounded-xl focus:border-ktech-cyan focus:outline-none transition-colors text-white resize-none placeholder-white/30"
+              class="w-full px-4 py-3 bg-ktech-surface border border-ktech-teal/30 rounded-xl focus:border-ktech-cyan focus:outline-none transition-colors text-white resize-none placeholder-white/30 text-sm md:text-base"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            class="w-full px-8 py-4 bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark rounded-xl hover:shadow-2xl hover:shadow-ktech-cyan/50 transition-all duration-300 font-semibold text-lg"
+            class="w-full px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark rounded-xl hover:shadow-2xl hover:shadow-ktech-cyan/50 transition-all duration-300 font-semibold text-base md:text-lg"
           >
             Enviar Mensagem
           </button>
@@ -652,72 +643,44 @@
   <!-- ============================================================
        FOOTER
        ============================================================ -->
-  <footer class="py-12 bg-ktech-dark border-t border-ktech-teal/10">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
+  <footer class="py-10 md:py-12 bg-ktech-dark border-t border-ktech-teal/10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
 
-        <!-- Logo e descrição -->
         <div class="md:col-span-2">
           <div class="flex items-center gap-3 mb-4">
             <img
               src="assets/logotipo/logotipo-k-tech.jpg"
               alt="Logotipo K-Tech"
-              class="h-20 w-auto rounded-2xl logo-blend"
+              class="h-16 md:h-20 w-auto rounded-2xl logo-blend"
             />
-            <span class="text-2xl font-semibold">K-Tech</span>
+            <span class="text-xl md:text-2xl font-semibold">K-Tech</span>
           </div>
-          <p class="text-white/50 mb-4 max-w-md">
+          <p class="text-white/50 mb-4 max-w-md text-sm md:text-base">
             Pioneira em tecnologia IoT assistiva para capacitar pessoas com deficiência visual
             com soluções de mobilidade autônoma.
           </p>
 
-          <!-- Redes sociais e contato -->
-          <div class="flex gap-4">
-            <a
-              href="https://www.linkedin.com/in/luizgabrielsantos"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="LinkedIn"
-              aria-label="LinkedIn da K-Tech"
-              class="w-10 h-10 bg-ktech-teal/10 rounded-lg flex items-center justify-center hover:bg-ktech-teal/25 hover:shadow-lg hover:shadow-ktech-cyan/30 transition-all duration-300"
-            >
-              <img src="assets/imagens/icone-linkedin.png" alt="" class="w-6 h-6 object-contain social-icon" />
+          <div class="flex gap-3 md:gap-4">
+            <a href="https://www.linkedin.com/in/luizgabrielsantos" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-ktech-teal/10 rounded-lg flex items-center justify-center hover:bg-ktech-teal/25 transition-all">
+              <img src="assets/imagens/icone-linkedin.png" alt="" class="w-5 h-5 md:w-6 md:h-6 object-contain" />
             </a>
-            <a
-              href="https://github.com/luizgsantos-crypto"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="GitHub"
-              aria-label="GitHub da K-Tech"
-              class="w-10 h-10 bg-ktech-teal/10 rounded-lg flex items-center justify-center hover:bg-ktech-teal/25 hover:shadow-lg hover:shadow-ktech-cyan/30 transition-all duration-300"
-            >
-              <img src="assets/imagens/icone-github.png" alt="" class="w-6 h-6 object-contain social-icon" />
+            <a href="https://github.com/luizgsantos-crypto" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-ktech-teal/10 rounded-lg flex items-center justify-center hover:bg-ktech-teal/25 transition-all">
+              <img src="assets/imagens/icone-github.png" alt="" class="w-5 h-5 md:w-6 md:h-6 object-contain" />
             </a>
-            <a
-              href="https://www.youtube.com/channel/UCfNY7bFjUvLL1X65zjGV_Mw"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="YouTube"
-              aria-label="YouTube da K-Tech"
-              class="w-10 h-10 bg-ktech-teal/10 rounded-lg flex items-center justify-center hover:bg-ktech-teal/25 hover:shadow-lg hover:shadow-ktech-cyan/30 transition-all duration-300"
-            >
-              <img src="assets/imagens/icone-youtube.png" alt="" class="w-6 h-6 object-contain social-icon" />
+            <a href="https://www.youtube.com/channel/UCfNY7bFjUvLL1X65zjGV_Mw" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-ktech-teal/10 rounded-lg flex items-center justify-center hover:bg-ktech-teal/25 transition-all">
+              <img src="assets/imagens/icone-youtube.png" alt="" class="w-5 h-5 md:w-6 md:h-6 object-contain" />
             </a>
-            <a
-              href="mailto:inova.ktech&#64;gmail.com"
-              title="E-mail"
-              aria-label="E-mail da K-Tech"
-              class="w-10 h-10 bg-ktech-teal/10 rounded-lg flex items-center justify-center hover:bg-ktech-teal/25 hover:shadow-lg hover:shadow-ktech-cyan/30 transition-all duration-300"
-            >
-              <img src="assets/imagens/icone-email.png" alt="" class="w-6 h-6 object-contain social-icon" />
+            <a href="mailto:inova.ktech@gmail.com" class="w-10 h-10 bg-ktech-teal/10 rounded-lg flex items-center justify-center hover:bg-ktech-teal/25 transition-all">
+              <img src="assets/imagens/icone-email.png" alt="" class="w-5 h-5 md:w-6 md:h-6 object-contain" />
             </a>
           </div>
         </div>
 
         <!-- Links rápidos -->
         <div>
-          <h4 class="font-semibold mb-4 text-ktech-cyan">Links Rápidos</h4>
-          <ul class="space-y-2">
+          <h4 class="font-semibold mb-3 md:mb-4 text-ktech-cyan">Links Rápidos</h4>
+          <ul class="space-y-2 text-sm md:text-base">
             <li><a href="#" class="text-white/50 hover:text-ktech-cyan transition-colors">Produtos</a></li>
             <li><a href="#" class="text-white/50 hover:text-ktech-cyan transition-colors">Tecnologia</a></li>
             <li><a href="#" class="text-white/50 hover:text-ktech-cyan transition-colors">Suporte</a></li>
@@ -727,18 +690,18 @@
 
         <!-- Contato -->
         <div>
-          <h4 class="font-semibold mb-4 text-ktech-cyan">Contato</h4>
-          <ul class="space-y-3 text-white/50 text-sm">
+          <h4 class="font-semibold mb-3 md:mb-4 text-ktech-cyan">Contato</h4>
+          <ul class="space-y-3 text-white/50 text-sm md:text-base">
             <li class="flex items-start gap-2">
-              <lucide-icon name="mail" class="w-4 h-4 mt-0.5 text-ktech-cyan flex-shrink-0"></lucide-icon>
+              <lucide-icon name="mail" class="w-4 h-4 md:w-5 md:h-5 mt-0.5 text-ktech-cyan flex-shrink-0"></lucide-icon>
               <span>inova.ktech&#64;gmail.com</span>
             </li>
             <li class="flex items-start gap-2">
-              <lucide-icon name="phone-call" class="w-4 h-4 mt-0.5 text-ktech-cyan flex-shrink-0"></lucide-icon>
+              <lucide-icon name="phone-call" class="w-4 h-4 md:w-5 md:h-5 mt-0.5 text-ktech-cyan flex-shrink-0"></lucide-icon>
               <span>+55 (71) 98854-0447</span>
             </li>
             <li class="flex items-start gap-2">
-              <lucide-icon name="map-pin" class="w-4 h-4 mt-0.5 text-ktech-cyan flex-shrink-0"></lucide-icon>
+              <lucide-icon name="map-pin" class="w-4 h-4 md:w-5 md:h-5 mt-0.5 text-ktech-cyan flex-shrink-0"></lucide-icon>
               <span>Salvador, Bahia<br />Brasil</span>
             </li>
           </ul>
@@ -746,10 +709,10 @@
       </div>
 
       <!-- Barra inferior -->
-      <div class="pt-8 border-t border-ktech-teal/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-sm">
+      <div class="pt-6 md:pt-8 border-t border-ktech-teal/10 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-white/40 text-xs md:text-sm text-center md:text-left">
         <p>© 2026 K-Tech. Todos os direitos reservados.</p>
         <p>K-Tech</p>
-        <div class="flex gap-6">
+        <div class="flex flex-wrap justify-center gap-4 md:gap-6">
           <a href="#" class="hover:text-ktech-cyan transition-colors">Política de Privacidade</a>
           <a href="#" class="hover:text-ktech-cyan transition-colors">Termos de Serviço</a>
         </div>
