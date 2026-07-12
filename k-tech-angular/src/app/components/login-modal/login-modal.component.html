@@ -1,0 +1,127 @@
+<!--
+  K-TECH STARTUP - PROPRIETARY AND CONFIDENTIAL
+
+  Copyright (c) 2026 Luiz Gabriel Silva Brito Santos (K-Tech).
+  Todos os direitos reservados. CNPJ: 66.454.862/0001-00
+
+  AVISO LEGAL PARA AVALIAÇÃO ACADÊMICA (SENAI):
+  Este código-fonte é disponibilizado estritamente para fins de avaliação
+  técnica e acadêmica pelo corpo docente/avaliadores do SENAI.
+  É expressamente proibida a cópia, clonagem, modificação, distribuição, uso comercial
+  ou reprodução total ou parcial desta interface ou lógica sem a autorização
+  prévia e por escrito do fundador da K-Tech.
+
+  Tecnologia atrelada ao Processo INPI: BR 20 2026 012104 0
+-->
+
+<!-- Overlay escuro que cobre a tela toda -->
+<div
+  *ngIf="isOpen"
+  class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 overlay-enter"
+  (click)="close()"
+>
+  <!-- Caixa do modal (o clique interno não fecha o overlay) -->
+  <div
+    class="bg-ktech-surface border-2 border-ktech-teal/30 rounded-2xl p-8 max-w-md w-full shadow-2xl shadow-ktech-teal/20 modal-enter"
+    (click)="stopPropagation($event)"
+  >
+    <!-- Cabeçalho: logo + título + botão fechar -->
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-gradient-to-br from-ktech-teal to-ktech-cyan rounded-xl flex items-center justify-center">
+          <span class="text-ktech-dark font-bold text-xl">K</span>
+        </div>
+        <div>
+          <h2 class="text-2xl text-white">Portal do Cliente</h2>
+          <p class="text-white/50 text-sm">Acesse sua conta K-Tech</p>
+        </div>
+      </div>
+      <button type="button" aria-label="Fechar" (click)="close()" class="text-white/50 hover:text-white transition-colors">
+        <lucide-icon name="x" class="w-6 h-6"></lucide-icon>
+      </button>
+    </div>
+
+    <!-- Formulário de login -->
+    <form class="space-y-5" (ngSubmit)="onSubmit()">
+      <!-- CPF ou E-mail -->
+      <div>
+        <label for="login-email" class="block mb-2 text-white/70 text-sm">CPF ou E-mail</label>
+        <input
+          type="text"
+          id="login-email"
+          name="email"
+          [(ngModel)]="loginData.email"
+          required
+          placeholder="000.000.000-00 ou email@exemplo.com"
+          class="w-full px-4 py-3 bg-ktech-dark border border-ktech-teal/30 rounded-lg focus:border-ktech-cyan focus:outline-none transition-colors text-white placeholder-white/30"
+        />
+      </div>
+
+      <!-- Senha com botão de mostrar/ocultar -->
+      <div>
+        <label for="login-password" class="block mb-2 text-white/70 text-sm">Senha</label>
+        <div class="relative">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="login-password"
+            name="password"
+            [(ngModel)]="loginData.password"
+            required
+            placeholder="Digite sua senha"
+            class="w-full px-4 py-3 bg-ktech-dark border border-ktech-teal/30 rounded-lg focus:border-ktech-cyan focus:outline-none transition-colors text-white placeholder-white/30"
+          />
+          <button
+            type="button"
+            [attr.aria-label]="showPassword ? 'Ocultar senha' : 'Mostrar senha'"
+            (click)="togglePassword()"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors"
+          >
+            <lucide-icon [name]="showPassword ? 'eye-off' : 'eye'" class="w-5 h-5"></lucide-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lembrar de mim + Esqueci a senha -->
+      <div class="flex items-center justify-between text-sm">
+        <label class="flex items-center gap-2 text-white/70 cursor-pointer">
+          <input type="checkbox" name="remember" class="accent-ktech-teal" />
+          Lembrar de mim
+        </label>
+        <a href="#" class="text-ktech-cyan hover:text-ktech-teal transition-colors">Esqueci minha senha</a>
+      </div>
+
+      <!-- Aceite obrigatório: Termos de Uso e LGPD -->
+      <label class="flex items-start gap-3 text-white/70 text-sm cursor-pointer select-none">
+        <input
+          type="checkbox"
+          name="terms"
+          [(ngModel)]="termsAccepted"
+          class="accent-ktech-teal mt-0.5 w-4 h-4 flex-shrink-0"
+        />
+        <span>
+          Li e aceito os
+          <a href="#" class="text-ktech-cyan hover:text-ktech-teal transition-colors underline underline-offset-2">Termos de Uso</a>
+          e a
+          <a href="#" class="text-ktech-cyan hover:text-ktech-teal transition-colors underline underline-offset-2">Política de Privacidade (LGPD)</a>.
+        </span>
+      </label>
+
+      <!-- Botão Entrar: só habilita após o aceite da LGPD -->
+      <button
+        type="submit"
+        [disabled]="!termsAccepted"
+        class="w-full px-6 py-3 bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark rounded-lg transition-all duration-300 font-semibold enabled:hover:shadow-lg enabled:hover:shadow-ktech-cyan/50 disabled:opacity-40 disabled:cursor-not-allowed disabled:grayscale"
+      >
+        Entrar
+      </button>
+    </form>
+
+    <!-- Rodapé do modal -->
+    <div class="mt-6 pt-6 border-t border-white/10 text-center">
+      <p class="text-white/50 text-sm">
+        Ainda não tem conta?
+        <a href="#" class="text-ktech-cyan hover:text-ktech-teal transition-colors">CADASTRAR-SE</a>
+      </p>
+    </div>
+  </div>
+</div>

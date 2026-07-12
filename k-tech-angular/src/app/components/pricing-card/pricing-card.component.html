@@ -1,0 +1,81 @@
+<!--
+  K-TECH STARTUP - PROPRIETARY AND CONFIDENTIAL
+
+  Copyright (c) 2026 Luiz Gabriel Silva Brito Santos (K-Tech).
+  Todos os direitos reservados. CNPJ: 66.454.862/0001-00
+
+  AVISO LEGAL PARA AVALIAÇÃO ACADÊMICA (SENAI):
+  Este código-fonte é disponibilizado estritamente para fins de avaliação
+  técnica e acadêmica pelo corpo docente/avaliadores do SENAI.
+  É expressamente proibida a cópia, clonagem, modificação, distribuição, uso comercial
+  ou reprodução total ou parcial desta interface ou lógica sem a autorização
+  prévia e por escrito do fundador da K-Tech.
+
+  Tecnologia atrelada ao Processo INPI: BR 20 2026 012104 0
+-->
+
+<div
+  class="relative bg-ktech-surface rounded-3xl p-8 transition-all duration-300 h-full"
+  [ngClass]="
+    plan.popular
+      ? 'border-2 border-ktech-cyan shadow-2xl shadow-ktech-cyan/20 lg:scale-105'
+      : 'border border-ktech-teal/20 hover:border-ktech-teal/50'
+  "
+>
+  <!-- Selo "Mais Vendido" (apenas para o plano popular) -->
+  <div
+    *ngIf="plan.popular"
+    class="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-1.5 bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark text-sm font-semibold rounded-full shadow-lg shadow-ktech-cyan/50"
+  >
+    Mais Vendido
+  </div>
+
+  <!-- Cabeçalho do plano: tipografia, nome, preço e descrição -->
+  <div class="text-center mb-8 pt-4">
+    <!-- Tipografia futurista do tier (fundo preto integrado via mix-blend-mode) -->
+    <img
+      *ngIf="plan.typography"
+      [src]="plan.typography"
+      [alt]="'Tipografia ' + plan.name"
+      class="typography-img mx-auto mb-4"
+    />
+    <h3 class="text-2xl font-bold mb-2 text-white">{{ plan.name }}</h3>
+    <div class="text-5xl font-bold text-ktech-cyan mb-2">{{ plan.price }}</div>
+    <p class="text-white/50 text-sm mb-3">{{ plan.description }}</p>
+
+    <!-- Etiqueta do aplicativo SaaS (mensalidade) -->
+    <div
+      *ngIf="plan.saas"
+      class="inline-block px-4 py-1.5 bg-ktech-teal/10 border border-ktech-teal/30 rounded-full text-ktech-cyan text-xs"
+    >
+      + App: {{ plan.saas }}
+    </div>
+  </div>
+
+  <!-- Lista de recursos incluídos / não incluídos -->
+  <div class="space-y-3 mb-8">
+    <div *ngFor="let feature of plan.features" class="flex items-start gap-3">
+      <lucide-icon
+        [name]="feature.included ? 'check' : 'x'"
+        class="w-5 h-5 flex-shrink-0 mt-0.5"
+        [ngClass]="feature.included ? 'text-ktech-cyan' : 'text-white/20'"
+      ></lucide-icon>
+      <span class="text-sm" [ngClass]="feature.included ? 'text-white' : 'text-white/30'">
+        {{ feature.text }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Botão de seleção do plano -->
+  <button
+    type="button"
+    class="w-full py-3 rounded-xl font-semibold transition-all duration-300"
+    [ngClass]="
+      plan.popular
+        ? 'bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark hover:shadow-lg hover:shadow-ktech-cyan/50'
+        : 'border-2 border-ktech-teal text-ktech-cyan hover:bg-ktech-teal/10'
+    "
+  >
+    Selecionar Plano
+  </button>
+</div>

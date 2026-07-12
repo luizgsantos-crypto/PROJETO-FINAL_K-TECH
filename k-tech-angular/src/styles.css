@@ -1,0 +1,185 @@
+/*
+ * K-TECH STARTUP - PROPRIETARY AND CONFIDENTIAL
+ *
+ * Copyright (c) 2026 Luiz Gabriel Silva Brito Santos (K-Tech).
+ * Todos os direitos reservados. CNPJ: 66.454.862/0001-00
+ *
+ * AVISO LEGAL PARA AVALIAÇÃO ACADÊMICA (SENAI):
+ * Este código-fonte é disponibilizado estritamente para fins de avaliação
+ * técnica e acadêmica pelo corpo docente/avaliadores do SENAI.
+ * É expressamente proibida a cópia, clonagem, modificação, distribuição, uso comercial
+ * ou reprodução total ou parcial desta interface ou lógica sem a autorização
+ * prévia e por escrito do fundador da K-Tech.
+ *
+ * Tecnologia atrelada ao Processo INPI: BR 20 2026 012104 0
+ */
+
+/* ============================================================
+   ESTILOS GLOBAIS - K-TECH
+   Tailwind CSS + utilitários de animação do projeto
+   ============================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0B0C10;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Animações de entrada (substituem o framer-motion) ---------- */
+
+/* Elemento começa invisível e sobe suavemente ao entrar na tela.
+   A classe .revealed é adicionada pela diretiva appRevealOnScroll. */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variações de direção para o Hero */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slide-in-right 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes slide-in-left {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade + zoom usado nos slides do carrossel */
+.slide-enter {
+  animation: slide-fade-zoom 0.7s ease-out forwards;
+}
+
+@keyframes slide-fade-zoom {
+  from { opacity: 0; transform: scale(1.08); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Fade + deslocamento usado nas abas de preços */
+.tab-enter {
+  animation: tab-fade-up 0.35s ease-out forwards;
+}
+
+@keyframes tab-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Entrada dos overlays (modal de login e banner de cookies) */
+.overlay-enter {
+  animation: overlay-fade 0.25s ease-out forwards;
+}
+
+@keyframes overlay-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-enter {
+  animation: modal-pop 0.3s ease-out forwards;
+}
+
+@keyframes modal-pop {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.banner-enter {
+  animation: banner-rise 0.4s ease-out forwards;
+}
+
+@keyframes banner-rise {
+  from { opacity: 0; transform: translateY(100px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Acordeão do FAQ ---------- */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-answer.open {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer > div {
+  overflow: hidden;
+}
+
+/* ---------- Barra de rolagem personalizada ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0C10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #45A29E;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #66FCF1;
+}
+
+/* ---------- Ícones Lucide ---------- */
+/* Faz o SVG interno respeitar as classes de tamanho (w-4, h-6 etc.)
+   aplicadas no elemento <lucide-icon>. */
+lucide-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+lucide-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- Logotipo e imagens com fundo preto ---------- */
+/* O logotipo oficial tem fundo preto sólido; screen mescla com o tema escuro. */
+.logo-blend {
+  mix-blend-mode: screen;
+}
+
+/* Ícones sociais do rodapé (PNGs transparentes da pasta assets/imagens). */
+.social-icon {
+  filter: drop-shadow(0 0 4px rgba(102, 252, 241, 0.35));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+a:hover > .social-icon {
+  filter: drop-shadow(0 0 8px rgba(102, 252, 241, 0.8));
+  transform: scale(1.1);
+}

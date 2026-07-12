@@ -1,0 +1,88 @@
+<!--
+  K-TECH STARTUP - PROPRIETARY AND CONFIDENTIAL
+
+  Copyright (c) 2026 Luiz Gabriel Silva Brito Santos (K-Tech).
+  Todos os direitos reservados. CNPJ: 66.454.862/0001-00
+
+  AVISO LEGAL PARA AVALIAÇÃO ACADÊMICA (SENAI):
+  Este código-fonte é disponibilizado estritamente para fins de avaliação
+  técnica e acadêmica pelo corpo docente/avaliadores do SENAI.
+  É expressamente proibida a cópia, clonagem, modificação, distribuição, uso comercial
+  ou reprodução total ou parcial desta interface ou lógica sem a autorização
+  prévia e por escrito do fundador da K-Tech.
+
+  Tecnologia atrelada ao Processo INPI: BR 20 2026 012104 0
+-->
+
+<div
+  class="relative rounded-3xl overflow-hidden border border-ktech-teal/30 shadow-2xl shadow-ktech-teal/20 bg-ktech-dark"
+  [ngClass]="heightClass"
+>
+  <!-- Slide atual (o *ngIf com "trackBy" no índice reinicia a animação a cada troca) -->
+  <ng-container *ngFor="let slide of slides; let i = index">
+    <div *ngIf="i === currentSlide" class="absolute inset-0 slide-enter">
+
+      <!-- Imagem principal, com fallback caso a URL falhe -->
+      <!-- object-cover corta para preencher; object-contain mostra a imagem inteira -->
+      <img
+        *ngIf="!isBroken(slide.src)"
+        [src]="slide.src"
+        [alt]="slide.alt"
+        class="w-full h-full"
+        [ngClass]="imageFit === 'contain' ? 'object-contain' : 'object-cover'"
+        (error)="onImageError(slide.src)"
+      />
+      <div
+        *ngIf="isBroken(slide.src)"
+        class="w-full h-full flex items-center justify-center bg-ktech-surface text-white/30 text-sm"
+      >
+        Imagem indisponível
+      </div>
+
+      <!-- Gradiente + legendas sobre a imagem (só quando o slide tem texto) -->
+      <div
+        *ngIf="slide.title || slide.subtitle"
+        class="absolute inset-0 bg-gradient-to-t from-ktech-dark via-ktech-dark/40 to-transparent flex flex-col items-center justify-end pb-12"
+      >
+        <h3 *ngIf="slide.title" class="text-4xl font-bold text-ktech-cyan mb-2">{{ slide.title }}</h3>
+        <p *ngIf="slide.subtitle" class="text-white/80 text-center max-w-md px-4">{{ slide.subtitle }}</p>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Seta: slide anterior -->
+  <button
+    type="button"
+    aria-label="Slide anterior"
+    (click)="prevSlide()"
+    class="absolute top-1/2 -translate-y-1/2 left-6 z-10 bg-ktech-teal/20 backdrop-blur-md hover:bg-ktech-teal/40 text-white rounded-full p-4 transition-all duration-300 border border-ktech-teal/50 hover:border-ktech-cyan group"
+  >
+    <lucide-icon name="chevron-left" class="w-6 h-6 group-hover:scale-110 transition-transform"></lucide-icon>
+  </button>
+
+  <!-- Seta: próximo slide -->
+  <button
+    type="button"
+    aria-label="Próximo slide"
+    (click)="nextSlide()"
+    class="absolute top-1/2 -translate-y-1/2 right-6 z-10 bg-ktech-teal/20 backdrop-blur-md hover:bg-ktech-teal/40 text-white rounded-full p-4 transition-all duration-300 border border-ktech-teal/50 hover:border-ktech-cyan group"
+  >
+    <lucide-icon name="chevron-right" class="w-6 h-6 group-hover:scale-110 transition-transform"></lucide-icon>
+  </button>
+
+  <!-- Indicadores de posição (bolinhas) -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-10">
+    <button
+      *ngFor="let slide of slides; let i = index"
+      type="button"
+      [attr.aria-label]="'Ir para o slide ' + (i + 1)"
+      (click)="goToSlide(i)"
+      class="h-2 rounded-full transition-all duration-300"
+      [ngClass]="
+        i === currentSlide
+          ? 'w-12 bg-ktech-cyan shadow-lg shadow-ktech-cyan/50'
+          : 'w-2 bg-white/30 hover:bg-white/50'
+      "
+    ></button>
+  </div>
+</div>

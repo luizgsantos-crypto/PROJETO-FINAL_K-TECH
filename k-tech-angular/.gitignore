@@ -1,0 +1,19 @@
+# Dependencias
+/node_modules
+
+# Build
+/dist
+/out-tsc
+
+# Cache do Angular
+/.angular/cache
+
+# IDEs e sistema
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*

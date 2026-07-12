@@ -1,0 +1,30 @@
+<!--
+  K-TECH STARTUP - PROPRIETARY AND CONFIDENTIAL
+
+  Copyright (c) 2026 Luiz Gabriel Silva Brito Santos (K-Tech).
+  Todos os direitos reservados. CNPJ: 66.454.862/0001-00
+
+  AVISO LEGAL PARA AVALIAÇÃO ACADÊMICA (SENAI):
+  Este código-fonte é disponibilizado estritamente para fins de avaliação
+  técnica e acadêmica pelo corpo docente/avaliadores do SENAI.
+  É expressamente proibida a cópia, clonagem, modificação, distribuição, uso comercial
+  ou reprodução total ou parcial desta interface ou lógica sem a autorização
+  prévia e por escrito do fundador da K-Tech.
+
+  Tecnologia atrelada ao Processo INPI: BR 20 2026 012104 0
+-->
+
+<div *ngIf="isVisible" class="fixed bottom-6 right-6 z-40 max-w-md banner-enter">
+  <div class="bg-ktech-surface border border-ktech-teal/30 rounded-2xl p-6 shadow-2xl shadow-ktech-teal/20">
+    <p class="text-white/80 text-sm mb-4 leading-relaxed">
+      Nós utilizamos cookies para melhorar sua experiência e proteger seus dados.
+    </p>
+    <button
+      type="button"
+      (click)="aceitarCookies()"
+      class="w-full px-6 py-2.5 bg-gradient-to-r from-ktech-teal to-ktech-cyan text-ktech-dark rounded-lg hover:shadow-lg hover:shadow-ktech-cyan/50 transition-all duration-300 font-semibold"
+    >
+      Aceitar
+    </button>
+  </div>
+</div>
