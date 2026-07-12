@@ -2,8 +2,7 @@
  * K-TECH STARTUP - PROPRIETARY AND CONFIDENTIAL
  *
  * Copyright (c) 2026 Luiz Gabriel Silva Brito Santos (K-Tech).
- * Todos os direitos reservados. CNPJ: 66.454.862/0001-00
- *
+ * Todos os direitos reservados. 
  * AVISO LEGAL PARA AVALIACAO ACADEMICA (SENAI):
  * Este codigo-fonte e disponibilizado estritamente para fins de avaliacao
  * tecnica e academica pelo corpo docente/avaliadores do SENAI.
